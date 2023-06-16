@@ -1,4 +1,6 @@
 HEADING="$HEADING, Annex C Sizing";
 ROW="$ROW, $TODO";
 
-echo "Annex C Sizing: $TODO";
+if [[ "$VERBOSE" = "true" ]]; then
+	echo "Annex C Sizing: $TODO";
+fi

@@ -1,5 +1,16 @@
+# Config file
 config.sh
+
+# APIs
 /api
+
+# Output
 /output
+
+# Temporary files
 /tmp
 *.swp
+
+# User input
+apis.txt
+srcs.txt

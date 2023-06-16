@@ -41,15 +41,21 @@ The script requires a bash shell execution in a linux environment (developed in 
 - Create a `config.sh` file with details such as repositories, paths, files, owner, etc. Follow the `config.example.sh`.
 - Basic usage for one API (prompted)
 
-      . main.sh
+      ./extract-api.sh
 
-- or
+- for specific API
 
-      . main.sh <API-NAME>
+      ./extract-api.sh <API-NAME>
 
 - For long list of APIs, modify `ALL_API` in `all-api.sh` to contain the list of APIs and run
 
-      . all-api.sh
+      ./extract-apis.sh
+
+- Additional option arguments
+  - -h: help and usage
+  - -n <API-NAME>: normal (default)
+  - -v <API-NAME>: verbose logs
+  - -p: prompted api
 
 ## Creating your own columns
 

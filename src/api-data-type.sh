@@ -7,4 +7,6 @@ fi
 HEADING="$HEADING, API Data Type Count";
 ROW="$ROW, $DATATYPE_FILES $(api-sizer $DATATYPE_FILES 4 9 16)";
 
-echo "API Data Types: $DATATYPE_FILES $(api-sizer $DATATYPE_FILES 4 9 16)";
+if [[ "$VERBOSE" = "true" ]]; then
+	echo "API Data Types: $DATATYPE_FILES $(api-sizer $DATATYPE_FILES 4 9 16)";
+fi

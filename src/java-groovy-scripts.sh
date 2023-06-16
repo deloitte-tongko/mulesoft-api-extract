@@ -20,4 +20,6 @@ JGS_FILES=$(expr $JAVA_FILES + $GROOVY_FILES + $SCRIPT_FILES);
 HEADING="$HEADING, Number of Java/Groovy Code Classes/Scripts";
 ROW="$ROW, $JAVA_FILES (Java) $GROOVY_FILES (Groovy) $SCRIPT_FILES (DB) $JGS_FILES (Total) - $(api-sizer $JGS_FILES 6 11 21)";
 
-echo "Java, Groovy, Scripts: $JAVA_FILES (Java) $GROOVY_FILES (Groovy) $SCRIPT_FILES (DB) $JGS_FILES (Total) - $(api-sizer $JGS_FILES 6 11 21)";
+if [[ "$VERBOSE" = "true" ]]; then
+	echo "Java, Groovy, Scripts: $JAVA_FILES (Java) $GROOVY_FILES (Groovy) $SCRIPT_FILES (DB) $JGS_FILES (Total) - $(api-sizer $JGS_FILES 6 11 21)";
+fi

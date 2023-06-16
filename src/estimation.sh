@@ -1,4 +1,6 @@
 HEADING="$HEADING, Estimation";
 ROW="$ROW, $TODO";
 
-echo "Estimation: $TODO";
+if [[ "$VERBOSE" = "true" ]]; then
+	echo "Estimation: $TODO";
+fi

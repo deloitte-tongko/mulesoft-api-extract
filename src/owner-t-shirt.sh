@@ -1,4 +1,6 @@
 HEADING="$HEADING, Owner T-shirt";
 ROW="$ROW, $OWNER";
 
-echo "Owner T-shirt: $OWNER";
+if [[ "$VERBOSE" = "true" ]]; then
+	echo "Owner T-shirt: $OWNER";
+fi

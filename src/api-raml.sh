@@ -28,4 +28,6 @@ fi
 HEADING="$HEADING, API RAML (Resource and Verb)";
 ROW="$ROW, $RAML_SIZE $(api-sizer $RAML_SIZE 6 11 12)";
 
-echo "RAML size: $RAML_SIZE $(api-sizer $RAML_SIZE 6 11 12)";
+if [[ "$VERBOSE" = "true" ]]; then
+	echo "RAML size: $RAML_SIZE $(api-sizer $RAML_SIZE 6 11 12)";
+fi

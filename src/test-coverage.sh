@@ -1,4 +1,6 @@
 HEADING="$HEADING, Test Coverage";
 ROW="$ROW, $TODO";
 
-echo "Test Coverage: $TODO";
+if [[ "$VERBOSE" = "true" ]]; then
+	echo "Test Coverage: $TODO";
+fi
