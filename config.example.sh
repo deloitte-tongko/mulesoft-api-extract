@@ -5,7 +5,8 @@ REPOSITORY_OUTPUT_PATH="api";
 
 # Code options
 SRC_PATH="src";
-SRC_FILES=("<src-1>" "<src-2>" "<src-3>" "...");
+SRCS_FILE="srcs.txt";
+APIS_FILE="apis.txt";
 OUTPUT_PATH="output/";
 OUTPUT_FILE="output.csv";
 
