@@ -35,10 +35,16 @@ The script requires a bash shell execution in a linux environment (developed in 
 - Allow for different types of repositories (currently only git)
 - Implementation for Windows OS
 
-## Usage
+## Setup
 
 - Make sure all package dependencies are installed.
-- Create a `config.sh` file with details such as repositories, paths, files, owner, etc. Follow the `config.example.sh`.
+- Create a `config.sh` file with details such as repositories, src path, api path, files, owner, etc. Follow the `config.example.sh`.
+- Create a file referenced by `SRCS_FILE` in `config.sh` and populate with src files which indicate the columns in the output csv file.
+
+## Usage
+
+### Single API (`extract-api.sh`)
+
 - Basic usage for one API (prompted)
 
       ./extract-api.sh
@@ -47,15 +53,35 @@ The script requires a bash shell execution in a linux environment (developed in 
 
       ./extract-api.sh <API-NAME>
 
-- For long list of APIs, modify `ALL_API` in `all-api.sh` to contain the list of APIs and run
+- Example: prompted verbose
 
-      ./extract-apis.sh
+      ./extract-api.sh -vp
 
 - Additional option arguments
+
   - -h: help and usage
   - -n <API-NAME>: normal (default)
   - -v <API-NAME>: verbose logs
   - -p: prompted api
+
+### Multiple APIs (`extract-apis.sh`)
+
+For long list of APIs, create a file referenced by `APIS_FILE` in `config.sh` to contain the list of APIs line by line.
+
+- Basic usage
+
+      ./extract-apis.sh
+
+- Recurring prompts (Ctrl+C to exit loop)
+
+      ./extract-api.sh -p
+
+- Additional option arguments
+
+  - -h: help and usage
+  - -n: normal (default)
+  - -v: verbose logs
+  - -p: prompted recursion
 
 ## Creating your own columns
 
