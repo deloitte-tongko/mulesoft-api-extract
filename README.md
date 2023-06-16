@@ -36,6 +36,7 @@ The script requires a bash shell execution in a linux environment (developed in 
 - Implementation for Windows OS
 - Allow for multiple branch acceptance (main/master/feature/etc.)
 - Remove /tmp when the process is changed from using temp file and instead injection
+- Optargs are a little awkward for `extract-apis.sh`
 
 ## Setup
 
@@ -64,6 +65,7 @@ The script requires a bash shell execution in a linux environment (developed in 
   - -h: help and usage
   - -v: verbose logs
   - -i <API-NAME>: input API (unprompted)
+  - -r: replace existing data
 
 ### Multiple APIs (`extract-apis.sh`)
 
@@ -83,6 +85,7 @@ For long list of APIs, create a file referenced by `APIS_FILE` in `config.sh` to
   - -i: input files (default)
   - -v: verbose logs
   - -p: prompted recursion
+  - -r: replace previous data
 
 ## Creating your own columns
 

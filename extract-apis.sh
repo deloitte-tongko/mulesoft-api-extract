@@ -1,6 +1,3 @@
-if [[ -d output/ && -f output/output.csv ]]; then
-	rm output/output.csv;
-fi
 
 . config.sh;
 
@@ -9,7 +6,7 @@ do
 	. $HELPER_FILE;
 done
 
-while getopts 'hivp' opt; do
+while getopts 'hivpr' opt; do
 	case "$opt" in
 		h) # help
 			extract-apis-usage
@@ -35,6 +32,12 @@ while getopts 'hivp' opt; do
 				./extract-api.sh -p;
 			done
 			exit 0;
+			;;
+
+		r) # replace data
+			if [[ -d "$OUTPUT_PATH" && -f "$OUTPUT_PATH/$OUTPUT_FILE" ]]; then
+				rm "$OUTPUT_PATH/$OUTPUT_FILE";
+			fi
 			;;
 
 		:) # argument requirement

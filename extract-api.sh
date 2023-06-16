@@ -11,7 +11,8 @@ done
 
 API_NAME="";
 VERBOSE=false;
-while getopts 'hvi:' opt; do
+REPLACE=false;
+while getopts 'hvi:r' opt; do
 	case "$opt" in
 		h) # help
 			extract-api-usage;
@@ -24,6 +25,10 @@ while getopts 'hvi:' opt; do
 
 		i) # input API
 			API_NAME="$OPTARG";
+			;;
+
+		r) # replace output data
+			REPLACE=true;
 			;;
 
 		:) # argument requirement
@@ -58,7 +63,6 @@ else
 	[[ ! $(git clone "$REPO_PATH:$REPOSITORY_OUTPUT") ]] && exit 1;
 fi
 
-# Run the analysis
 if [[ ! -d "$SRC_PATH" ]]; then
 	mkdir "$SRC_PATH";
 fi
@@ -67,6 +71,7 @@ fi
 HEADING="API Name";
 ROW="$API_NAME";
 
+# Run the analysis
 while read -r src; do
 	. "$SRC_PATH"/$src;
 done < $SRCS_FILE
@@ -75,7 +80,7 @@ if [[ ! -d $OUTPUT_PATH ]]; then
 	mkdir $OUTPUT_PATH;
 fi
 
-if [[ ! -f $OUTPUT_PATH/$OUTPUT_FILE || $2 -eq "--reset" ]]; then
+if [[ ! -f $OUTPUT_PATH/$OUTPUT_FILE || $REPLACE = "true" ]]; then
 	echo $HEADING > $OUTPUT_PATH/$OUTPUT_FILE;
 fi
 
