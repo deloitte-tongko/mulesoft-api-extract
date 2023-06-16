@@ -56,16 +56,17 @@ The script requires a bash shell execution in a linux environment (developed in 
 
       ./extract-api.sh -i <API-NAME>
 
-- Example: verbose API output
+- Example: verbose API to a specific file
 
-      ./extract-api.sh -vi <API-NAME>
+      ./extract-api.sh -vi <API-NAME> -o <OUTPUT-FILE>
 
 - Additional option arguments
 
   - -h: help and usage
-  - -v: verbose logs
   - -i <API-NAME>: input API (unprompted)
+  - -o <OUTPUT-FILE>: output file path
   - -r: replace existing data
+  - -v: verbose logs
 
 ### Multiple APIs (`extract-apis.sh`)
 
@@ -87,8 +88,9 @@ For long list of APIs, create a file referenced by `APIS_FILE` in `config.sh` to
 
   - -h: help and usage
   - -i: input files
-  - -v: verbose logs
+  - -o: output file path
   - -r: replace previous data
+  - -v: verbose logs
 
 ## Creating your own columns
 

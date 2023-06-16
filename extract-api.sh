@@ -12,19 +12,24 @@ done
 API_NAME="";
 VERBOSE=false;
 REPLACE=false;
-while getopts 'hvi:r' opt; do
+OUTPUT_FILE_CSV="$OUTPUT_PATH/$OUTPUT_FILE";
+while getopts 'hi:o:rv' opt; do
 	case "$opt" in
 		h) # help
 			extract-api-usage;
 			exit 0;
 			;;
 
-		v) # verbose
-			VERBOSE=true;
-			;;
-
 		i) # input API
 			API_NAME="$OPTARG";
+			;;
+
+		o) # output file
+			OUTPUT_FILE_CSV="$OPTARG";
+			;;
+
+		v) # verbose
+			VERBOSE=true;
 			;;
 
 		r) # replace output data
@@ -80,9 +85,10 @@ if [[ ! -d $OUTPUT_PATH ]]; then
 	mkdir $OUTPUT_PATH;
 fi
 
-if [[ ! -f $OUTPUT_PATH/$OUTPUT_FILE || $REPLACE = "true" ]]; then
-	echo $HEADING > $OUTPUT_PATH/$OUTPUT_FILE;
+if [[ ! -f $OUTPUT_FILE_CSV || $REPLACE = "true" ]]; then
+	echo $HEADING > $OUTPUT_FILE_CSV;
 fi
 
+echo $ROW >> $OUTPUT_FILE_CSV;
+
 echo "api $API_NAME has been extracted";
-echo $ROW >> $OUTPUT_PATH/$OUTPUT_FILE;

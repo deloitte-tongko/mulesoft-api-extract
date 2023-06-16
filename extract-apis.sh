@@ -5,28 +5,31 @@ do
 	. $HELPER_FILE;
 done
 
-optstring="-";
+optstring="";
 inputfile=false;
-while getopts 'hvir' opt; do
+while getopts 'hio:rv' opt; do
 	case "$opt" in
 		h) # help
 			extract-apis-usage
 			exit 0;
 			;;
 
-		v) # verbose
-			optstring+="v";
+		i) # input file 
+			inputfile=true;
 			;;
 
-		i) # input file 
-			optstring+="i";
-			inputfile=true;
+		o) # output file
+			optstring+=" -o $OPTARG";
 			;;
 
 		r) # replace data
 			if [[ -d "$OUTPUT_PATH" && -f "$OUTPUT_PATH/$OUTPUT_FILE" ]]; then
 				rm "$OUTPUT_PATH/$OUTPUT_FILE";
 			fi
+			;;
+
+		v) # verbose
+			optstring+=" -v";
 			;;
 
 		:) # argument requirement
@@ -43,12 +46,11 @@ done
 shift "$(($OPTIND -1))";
 
 if [[ "$inputfile" = "true" ]]; then
-	echo "yes";
 	while read -r api; do
-		./extract-api.sh $optstring $api;
+		./extract-api.sh$optstring -i $api;
 	done < $APIS_FILE
 elif [[ "$inputfile" = "false" ]]; then
 	while true; do
-		./extract-api.sh $optstring;
+		./extract-api.sh$optstring;
 	done
 fi
