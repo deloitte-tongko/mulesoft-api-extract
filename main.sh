@@ -6,6 +6,19 @@ else
 	API_NAME=$1;
 fi
 
+while getopts 'v:h' opt; do
+	case $opt in
+		v)
+			echo "Processing option v";
+			;;
+		?|h)
+			echo "Usage: $(basename $0) [-v arg]";
+			return 1
+			;;
+	esac
+done
+shift "$(($OPTIND -1))";
+
 # Config files
 . config.sh
 

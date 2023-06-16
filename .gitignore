@@ -2,3 +2,4 @@ config.sh
 /api
 /output
 /tmp
+*.swp
