@@ -71,20 +71,23 @@ The script requires a bash shell execution in a linux environment (developed in 
 
 For long list of APIs, create a file referenced by `APIS_FILE` in `config.sh` to contain the list of APIs line by line.
 
-- Basic usage
+- Basic usage (recurring prompts)
 
       ./extract-apis.sh
 
-- Recurring prompts (Ctrl+C to exit loop)
+- Input list
 
-      ./extract-api.sh -p
+      ./extract-apis.sh -i
+
+- Example: verbose API with API list input and replace previous output
+
+      ./extract-apis.sh -vri
 
 - Additional option arguments
 
   - -h: help and usage
-  - -i: input files (default)
+  - -i: input files
   - -v: verbose logs
-  - -p: prompted recursion
   - -r: replace previous data
 
 ## Creating your own columns
