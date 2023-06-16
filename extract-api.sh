@@ -9,26 +9,21 @@ do
 	. $HELPER_FILE
 done
 
-while getopts 'hn:pv:' opt; do
+API_NAME="";
+VERBOSE=false;
+while getopts 'hvi:' opt; do
 	case "$opt" in
 		h) # help
 			extract-api-usage;
 			exit 0;
 			;;
 
-		n) # normal
-			API_NAME="$OPTARG";
-			VERBOSE=false;
-			;;
-
 		v) # verbose
-			API_NAME="$OPTARG";
 			VERBOSE=true;
 			;;
 
-		p) # prompted
-			echo -n "Enter api name: ";
-			read API_NAME;
+		i) # input API
+			API_NAME="$OPTARG";
 			;;
 
 		:) # argument requirement
@@ -44,14 +39,9 @@ while getopts 'hn:pv:' opt; do
 done
 shift "$(($OPTIND -1))";
 
-if [[ $OPTIND -eq 1 ]]; then
-	if [[ -z $1 ]]; then
-		./extract-api.sh -p;
-		exit 0;
-	else
-		./extract-api.sh -n $1;
-		exit 0;
-	fi
+if [[ -z $API_NAME ]]; then
+	echo -n "Enter api name: ";
+	read API_NAME;
 fi
 
 # Make an output directory

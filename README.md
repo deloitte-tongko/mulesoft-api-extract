@@ -34,6 +34,8 @@ The script requires a bash shell execution in a linux environment (developed in 
 
 - Allow for different types of repositories (currently only git)
 - Implementation for Windows OS
+- Allow for multiple branch acceptance (main/master/feature/etc.)
+- Remove /tmp when the process is changed from using temp file and instead injection
 
 ## Setup
 
@@ -51,18 +53,17 @@ The script requires a bash shell execution in a linux environment (developed in 
 
 - for specific API
 
-      ./extract-api.sh <API-NAME>
+      ./extract-api.sh -i <API-NAME>
 
-- Example: prompted verbose
+- Example: verbose API output
 
-      ./extract-api.sh -vp
+      ./extract-api.sh -vi <API-NAME>
 
 - Additional option arguments
 
   - -h: help and usage
-  - -n <API-NAME>: normal (default)
-  - -v <API-NAME>: verbose logs
-  - -p: prompted api
+  - -v: verbose logs
+  - -i <API-NAME>: input API (unprompted)
 
 ### Multiple APIs (`extract-apis.sh`)
 
@@ -79,7 +80,7 @@ For long list of APIs, create a file referenced by `APIS_FILE` in `config.sh` to
 - Additional option arguments
 
   - -h: help and usage
-  - -n: normal (default)
+  - -i: input files (default)
   - -v: verbose logs
   - -p: prompted recursion
 

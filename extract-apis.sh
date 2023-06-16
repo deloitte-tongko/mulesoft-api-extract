@@ -9,29 +9,32 @@ do
 	. $HELPER_FILE;
 done
 
-while getopts 'hnpv' opt; do
+while getopts 'hivp' opt; do
 	case "$opt" in
 		h) # help
 			extract-apis-usage
 			exit 0;
 			;;
 
-		n) # normal
+		i) # normal
 			while read -r api; do
-				./extract-api.sh -n $api;
+				./extract-api.sh -i $api;
 			done < $APIS_FILE
+			exit 0;
 			;;
 
 		v) # verbose
 			while read -r api; do
 				./extract-api.sh -v $api;
 			done < $APIS_FILE
+			exit 0;
 			;;
 
 		p) # prompted
 			while true; do
 				./extract-api.sh -p;
 			done
+			exit 0;
 			;;
 
 		:) # argument requirement
@@ -49,7 +52,7 @@ shift "$(($OPTIND -1))";
 
 if [[ $OPTIND -eq 1 ]]; then
 	if [[ -z $1 ]]; then
-		./extract-apis.sh -n;
+		./extract-apis.sh -i;
 		exit 0;
 	fi
 fi

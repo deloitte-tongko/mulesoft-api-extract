@@ -1,7 +1,7 @@
 extract-api-usage() {
-	echo "Usage: extract-api.sh [-h] [-p] [-n arg] [-v arg]"
+	echo "Usage: extract-api.sh [-h] [-v] [-i arg]"
 }
 
 extract-apis-usage() {
-	echo "Usage: extract-apis.sh [-h] [-p] [-n] [-v]"
+	echo "Usage: extract-apis.sh [-h] [-i] [-v] [-p]"
 }
