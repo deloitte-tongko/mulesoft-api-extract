@@ -20,6 +20,7 @@ The script requires a bash shell execution in a linux environment (developed in 
 
 ## API features
 
+- Runtime version
 - API datatype properties
 - API data types
 - API RAMLs
