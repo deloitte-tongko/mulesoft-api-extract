@@ -10,7 +10,7 @@ fi
 GROOVY_LINES=$(find $BASE_PATH -type f | egrep -E "*.groovy$" | xargs cat | wc -l);
 GROOVY_LINES_AVG=0;
 
-if [[ $JAVA_FILES -ne 0 ]]; then
+if [[ $GROOVY_FILES -ne 0 ]]; then
 	GROOVY_LINES_AVG=$(expr $GROOVY_LINES / $GROOVY_FILES);
 fi
 
