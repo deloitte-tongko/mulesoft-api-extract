@@ -1,5 +1,5 @@
 GLOBAL_ELEMENT=0;
-if [[ -d "$BASE_PATH/src/main/app/config.xml" ]]; then
+if [[ -f "$BASE_PATH/src/main/app/config.xml" ]]; then
 	GLOBAL_ELEMENT=$(cat $BASE_PATH/src/main/app/config.xml | egrep -E "<spring:bean|doc:name" | wc -l);
 fi
 
