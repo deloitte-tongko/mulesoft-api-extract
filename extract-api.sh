@@ -12,8 +12,10 @@ done
 API_NAME="";
 VERBOSE=false;
 REPLACE=false;
+NO_OUTPUT=false;
 OUTPUT_FILE_CSV="$OUTPUT_PATH/$OUTPUT_FILE";
-while getopts 'hi:o:rv' opt; do
+
+while getopts 'hi:no:rv' opt; do
 	case "$opt" in
 		h) # help
 			extract-api-usage;
@@ -22,6 +24,10 @@ while getopts 'hi:o:rv' opt; do
 
 		i) # input API
 			API_NAME="$OPTARG";
+			;;
+
+		n) # no output
+			NO_OUTPUT=true;
 			;;
 
 		o) # output file
@@ -81,14 +87,16 @@ while read -r src; do
 	. "$SRC_PATH"/$src;
 done < $SRCS_FILE
 
-if [[ ! -d $OUTPUT_PATH ]]; then
-	mkdir $OUTPUT_PATH;
+if [[ $NO_OUTPUT = false ]]; then
+	if [[ ! -d $OUTPUT_PATH ]]; then
+		mkdir $OUTPUT_PATH;
+	fi
+
+	if [[ ! -f $OUTPUT_FILE_CSV || $REPLACE = "true" ]]; then
+		echo $HEADING > $OUTPUT_FILE_CSV;
+	fi
+
+	echo $ROW >> $OUTPUT_FILE_CSV;
+
+	echo "api $API_NAME has been extracted";
 fi
-
-if [[ ! -f $OUTPUT_FILE_CSV || $REPLACE = "true" ]]; then
-	echo $HEADING > $OUTPUT_FILE_CSV;
-fi
-
-echo $ROW >> $OUTPUT_FILE_CSV;
-
-echo "api $API_NAME has been extracted";
