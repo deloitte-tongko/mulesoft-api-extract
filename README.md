@@ -4,7 +4,7 @@ This sizer aims at giving a simple and effective solution to automate sizing of 
 
 > \*Warning! The provided example scripts in /src is not intended to be a foolproof method for high accuracy due to usages with `grep`. If this is important to you, I highly recommend implementing this using proper xml parsers such as `xmlstarlet`. However, the current implementation is a good guidance for implementation and also accuracy for simple and consistent APIs.
 
-> \*Warning 2! Be careful of script injection, depending on the implementation, some of the inputs are not being sanatised, please be careful with the data being run.
+> \*Warning 2! Be careful of script injection, depending on the implementation, some of the inputs are not being sanitised, please be careful with the data being run.
 
 ## Requirements
 
@@ -42,6 +42,8 @@ The script requires a bash shell execution in a linux environment (developed in 
 - Optargs are a little awkward for `extract-apis.sh`
 - Seperate the main extraction file into more readable format
 - Make the use of variables moer consistent (some variables aren't lower case, etc.)
+- Add more documentation on creating columns
+- Maybe document code a little more with comments
 
 ## Setup
 
