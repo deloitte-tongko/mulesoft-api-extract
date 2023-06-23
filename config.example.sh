@@ -9,6 +9,7 @@ SRCS_FILE="srcs.txt";
 APIS_FILE="apis.txt";
 OUTPUT_PATH="output/";
 OUTPUT_FILE="output.csv";
+TMP_PATH="tmp";
 
 # Helper path
 HELPER_PATH="helper";
