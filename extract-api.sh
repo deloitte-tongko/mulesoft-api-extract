@@ -65,6 +65,11 @@ if [[ ! -d "$REPOSITORY_OUTPUT_PATH" ]]; then
 	mkdir "$REPOSITORY_OUTPUT_PATH";
 fi
 
+# Make an tmp directory
+if [[ ! -d "$TMP_PATH" ]]; then
+	mkdir "$TMP_PATH";
+fi
+
 # Clone repository
 BASE_PATH="$REPOSITORY_OUTPUT_PATH/$API_NAME-$REPOSITORY_BRANCH";
 REPO_PATH="$REPOSITORY_BASE/$API_NAME";
