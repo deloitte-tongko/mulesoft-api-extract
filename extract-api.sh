@@ -73,6 +73,7 @@ fi
 # Clone repository
 BASE_PATH="$REPOSITORY_OUTPUT_PATH/$API_NAME-$REPOSITORY_BRANCH";
 REPO_PATH="$REPOSITORY_BASE/$API_NAME";
+
 if [[ -d  "$BASE_PATH" ]]; then
 	echo "Repository already cloned for $API_NAME, using local repository";
 else

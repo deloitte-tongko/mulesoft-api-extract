@@ -25,7 +25,7 @@ The script requires a bash shell execution in a linux environment (developed in 
 - Runtime version
 - API datatype properties
 - API data types
-- API RAMLs
+- API RAMLs (HTTP method is commented out)
 - Dataweave scripts (embedded and externalised)
 - Flow components
 - Flows and Subflows

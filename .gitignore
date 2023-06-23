@@ -12,5 +12,5 @@ config.sh
 *.swp
 
 # User input
-apis.txt
-srcs.txt
+apis.*
+srcs.*

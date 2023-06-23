@@ -20,7 +20,7 @@ if [[ -f $BASE_PATH/pom.xml ]]; then
 fi
 
 RUNTIME_VERSION=$(cat tmp/runtime-version);
-ROW="$ROW, $RUNTIME_VERSION";
+ROW="$ROW,$RUNTIME_VERSION";
 
 
 if [[ "$VERBOSE" = "true" ]]; then

@@ -47,6 +47,7 @@ shift "$(($OPTIND -1))";
 
 if [[ "$inputfile" = "true" ]]; then
 	while read -r api; do
+		api=$(echo $api | tr -d '\r');
 		./extract-api.sh$optstring -i $api;
 	done < $APIS_FILE
 elif [[ "$inputfile" = "false" ]]; then
