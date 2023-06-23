@@ -44,6 +44,7 @@ The script requires a bash shell execution in a linux environment (developed in 
 - Make the use of variables moer consistent (some variables aren't lower case, etc.)
 - Add more documentation on creating columns
 - Maybe document code a little more with comments
+- git credentials
 
 ## Setup
 
