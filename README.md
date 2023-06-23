@@ -40,6 +40,8 @@ The script requires a bash shell execution in a linux environment (developed in 
 - Allow for multiple branch acceptance (main/master/feature/etc.)
 - Remove /tmp when the process is changed from using temp file and instead injection
 - Optargs are a little awkward for `extract-apis.sh`
+- Seperate the main extraction file into more readable format
+- Make the use of variables moer consistent (some variables aren't lower case, etc.)
 
 ## Setup
 
