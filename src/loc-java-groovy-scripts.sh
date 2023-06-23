@@ -28,8 +28,8 @@ if [[ $JGS_FILES -ne 0 ]]; then
 	JGS_LINES_AVG=$(expr $JGS_LINES / $JGS_FILES);
 fi
 
-HEADING="$HEADING, Average Lines of Code per Class/Script";
-ROW="$ROW, $JAVA_LINES_AVG (Java) $GROOVY_LINES_AVG (Groovy) $SCRIPT_LINES_AVG (DB) $JGS_LINES_AVG (Total) - $(api-sizer $JGS_LINES_AVG 26 76 151)";
+HEADING="$HEADING,Average Lines of Code per Class/Script";
+ROW="$ROW,$JAVA_LINES_AVG (Java) $GROOVY_LINES_AVG (Groovy) $SCRIPT_LINES_AVG (DB) $JGS_LINES_AVG (Total) - $(api-sizer $JGS_LINES_AVG 26 76 151)";
 
 if [[ "$VERBOSE" = "true" ]]; then
 	echo "Average lines of code per class/script: $JAVA_LINES_AVG (Java) $GROOVY_LINES_AVG (Groovy) $SCRIPT_LINES_AVG (DB) - $(api-sizer $JGS_LINES_AVG 26 76 151)";

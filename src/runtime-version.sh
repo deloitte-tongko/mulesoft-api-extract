@@ -1,4 +1,4 @@
-HEADING="$HEADING, Runtime Version";
+HEADING="$HEADING,Runtime Version";
 
 echo $TODO > tmp/runtime-version;
 parent_tag=false;

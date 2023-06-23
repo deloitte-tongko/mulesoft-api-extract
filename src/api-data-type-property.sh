@@ -8,8 +8,8 @@ if [[ -d $BASE_PATH/src/main/api ]]; then
 	fi
 fi
 
-HEADING="$HEADING, API Data Type Property Count";
-ROW="$ROW, $DATATYPE_PROP_AVG $(api-sizer $DATATYPE_PROP_AVG 6 11 21)";
+HEADING="$HEADING,API Data Type Property Count";
+ROW="$ROW,$DATATYPE_PROP_AVG $(api-sizer $DATATYPE_PROP_AVG 6 11 21)";
 
 if [[ "$VERBOSE" = "true" ]]; then
 	echo "API Data Type Properties: $DATATYPE_PROP_AVG $(api-sizer $DATATYPE_PROP_AVG 6 11 21)";

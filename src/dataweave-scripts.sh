@@ -37,8 +37,8 @@ done
 
 DWL_FILES=$(expr $DWL_FILES_EXTERNAL + $(cat tmp/dw-files-embedded));
 
-HEADING="$HEADING, Number of DataWeave Scripts (Embedded and Externalised) with more than 2 properties/fields assigned";
-ROW="$ROW, $DWL_FILES $(api-sizer $DWL_FILES 11 21 50)";
+HEADING="$HEADING,Number of DataWeave Scripts (Embedded and Externalised) with more than 2 properties/fields assigned";
+ROW="$ROW,$DWL_FILES $(api-sizer $DWL_FILES 11 21 50)";
 
 if [[ "$VERBOSE" = "true" ]]; then
 	echo "Number of DS: $DWL_FILES $(api-sizer $DWL_FILES 11 21 50)";

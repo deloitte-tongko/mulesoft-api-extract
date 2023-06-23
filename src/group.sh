@@ -1,5 +1,5 @@
 HEADING="$HEADING, Group";
-ROW="$ROW, $TODO";
+ROW="$ROW,$TODO";
 
 if [[ "$VERBOSE" = "true" ]]; then
 	echo "Group: $TODO";

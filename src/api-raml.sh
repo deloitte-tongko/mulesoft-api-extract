@@ -25,8 +25,8 @@ if [[ -f $BASE_PATH/src/main/app/api.xml ]]; then
 	RAML_SIZE=$(expr $(cat $BASE_PATH/src/main/app/api.xml | egrep -E "</(sub-)?flow|batch:job>" | wc -l) - 1);
 fi
 
-HEADING="$HEADING, API RAML (Resource and Verb)";
-ROW="$ROW, $RAML_SIZE $(api-sizer $RAML_SIZE 6 11 12)";
+HEADING="$HEADING,API RAML (Resource and Verb)";
+ROW="$ROW,$RAML_SIZE $(api-sizer $RAML_SIZE 6 11 12)";
 
 if [[ "$VERBOSE" = "true" ]]; then
 	echo "RAML size: $RAML_SIZE $(api-sizer $RAML_SIZE 6 11 12)";
